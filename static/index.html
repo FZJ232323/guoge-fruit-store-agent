@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#173d2a" />
+  <title>果哥 · 水果店智能运营助手</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/vendor/lucide.min.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-glyph">果</span>
+        </div>
+        <div class="brand-copy">
+          <div class="brand-name">果哥</div>
+          <div class="brand-sub">智能运营助手</div>
+        </div>
+      </div>
+
+      <button class="shop-switch" type="button" id="shop-switch">
+        <span class="shop-avatar">青</span>
+        <span class="shop-copy">
+          <strong id="shop-name">果哥水果店</strong>
+          <small><span class="live-dot"></span> <span id="sync-label">数据已同步</span></small>
+        </span>
+        <i data-lucide="chevrons-up-down"></i>
+      </button>
+
+      <div class="nav-label">经营工作台</div>
+      <nav class="main-nav" aria-label="主要导航">
+        <button class="nav-item active" data-page="chat" type="button">
+          <i data-lucide="sparkles"></i>
+          <span>对话工作台</span>
+          <span class="nav-badge">智</span>
+        </button>
+        <button class="nav-item" data-page="purchase" type="button">
+          <i data-lucide="shopping-basket"></i>
+          <span>明日采购</span>
+          <span class="nav-count" id="purchase-nav-count">9</span>
+        </button>
+        <button class="nav-item" data-page="pricing" type="button">
+          <i data-lucide="badge-percent"></i>
+          <span>动态定价</span>
+          <span class="nav-alert-dot"></span>
+        </button>
+        <button class="nav-item" data-page="review" type="button">
+          <i data-lucide="chart-no-axes-combined"></i>
+          <span>经营复盘</span>
+        </button>
+      </nav>
+
+      <div class="nav-label nav-label-spaced">门店资产</div>
+      <nav class="main-nav" aria-label="门店资产">
+        <button class="nav-item" data-page="data" type="button">
+          <i data-lucide="database"></i>
+          <span>数据中心</span>
+        </button>
+        <button class="nav-item" data-page="memory" type="button">
+          <i data-lucide="brain-circuit"></i>
+          <span>门店记忆</span>
+          <span class="memory-count" id="memory-nav-count">5</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+
+      <div class="weather-mini" id="sidebar-weather">
+        <div class="weather-mini-top">
+          <span>明日经营环境</span>
+          <i data-lucide="cloud-sun"></i>
+        </div>
+        <div class="weather-mini-main">
+          <strong>19–27°</strong>
+          <span>多云转晴</span>
+        </div>
+        <div class="weather-mini-note">周末客流预计 <b>+22%</b></div>
+      </div>
+
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" type="button" id="mobile-menu" aria-label="打开菜单">
+          <i data-lucide="menu"></i>
+        </button>
+        <div class="page-heading">
+          <div class="eyebrow" id="page-kicker">经营总览</div>
+          <h1 id="page-title">经营工作台</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="date-chip">
+            <i data-lucide="calendar-days"></i>
+            <span id="top-date">10月17日 周六</span>
+          </div>
+          <div class="date-chip weather-chip">
+            <i data-lucide="cloud-sun"></i>
+            <span>19–27°C</span>
+          </div>
+          <span class="topbar-divider"></span>
+          <button class="icon-button" type="button" id="top-profile" aria-label="门店设置">
+            <i data-lucide="settings-2"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-scroll is-chat" id="content-scroll">
+        <main id="page-root" aria-live="polite"></main>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+  <div class="modal-root" id="modal-root"></div>
+  <div class="toast-root" id="toast-root"></div>
+  <div class="boot-screen" id="boot-screen">
+    <div class="boot-mark">
+      <span class="brand-glyph">果</span>
+    </div>
+    <div class="boot-name">果哥</div>
+    <div class="boot-line"><span></span></div>
+    <p>正在读取门店经营数据…</p>
+  </div>
+</body>
+</html>

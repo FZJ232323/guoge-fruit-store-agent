@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+data/state.json
+data/weather_cache.json
+*.log
